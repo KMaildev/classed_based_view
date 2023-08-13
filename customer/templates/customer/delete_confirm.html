@@ -1,0 +1,16 @@
+{% extends 'category/base.html' %}
+{% block contents %}
+<div class="row py-5">
+    <div class="col-md-12">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1>Delete Customer</h1>
+            <p>Are you sure you want to delete "{{ customer.name }}"?</p>
+            <input type="submit" value="Confirm" class="btn btn-info">
+            <a href="{% url 'customer_list' %}">
+                Cancel
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

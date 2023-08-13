@@ -1,0 +1,61 @@
+{% extends 'category/base.html' %}
+{% block contents %}
+<div class="row py-5">
+    <div class="col-md-12">
+        <table class="table table-bordered border-primary">
+            <tbody>
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        {{ category.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Slug
+                    </td>
+                    <td>
+                        {{ category.slug }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Created
+                    </td>
+                    <td>
+                        {{ category.created_at }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Updated
+                    </td>
+                    <td>
+                        {{ category.updated_at }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Actions
+                    </td>
+                    <td>
+                        <a href="{% url 'category_update' category.slug  %}" class="btn btn-info">
+                            Edit
+                        </a>
+
+                        <a href="{% url 'category_delete' category.slug  %}" class="btn btn-danger">
+                            Delete
+                        </a>
+
+                        <a href="{% url 'category_list' %}" class="btn btn-success">
+                            Back
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
