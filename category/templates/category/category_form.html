@@ -1,0 +1,12 @@
+{% extends 'category/base.html' %}
+{% block contents %}
+<div class="row py-5">
+    <div class="col-md-12">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save" class="btn btn-info">
+        </form>
+    </div>
+</div>
+{% endblock %}
